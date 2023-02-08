@@ -1,7 +1,4 @@
-﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
+﻿
     <meta charset="UTF-8">
     <style>
         
@@ -16,44 +13,22 @@
             width: 100%;
         }
 
-        /* Hiding scrollbar for IE, Edge and Firefox */
-        #v0 {
-          
-        }
-
-        /* Hiding scrollbar for Chrome, Safari and Opera */
-        p font-family helvetica {
-            font-size: 24px;
-        }
-
-        body {
+        * {
             scrollbar-width: none; /* Firefox */
             -ms-overflow-style: none; /* IE and Edge */
         }
-        body::-webkit-scrollbar {
+        *::-webkit-scrollbar {
             display: none;
         }
     </style>
-
-    <script>
-        window.console = window.console || function (t) { };
-    </script>
-    <script>
-        if (document.location.search.match(/type=embed/gi)) {
-            window.parent.postMessage("resize", "*");
-        }
-    </script>
-
-
-</head>
-<body translate="no">
-    <div id="set-height" style="height: 8357px; overflow: hidden; overflow-x: hidden; overflow-Y: hidden;"></div>
-    <p id="time"></p>
-    <video id="v0" tabindex="0">
-    <!-- <video id="v0" tabindex="0" autobuffer="autobuffer" preload="preload"> -->
-        <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" src="video/Remap1.mp4">
-    </video>
-
+    <body style="margin:0px;">
+        <div id="set-height" style="height: 3900px; overflow: hidden; overflow-x: hidden; overflow-Y: hidden;"></div>
+        <p id="time"></p>
+        <video id="v0" tabindex="0">
+        <!-- <video id="v0" tabindex="0" autobuffer="autobuffer" preload="preload"> -->
+            <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" src="video/Remap1.mp4">
+        </video>
+    </body>
 
 
     <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
@@ -70,14 +45,20 @@
 
         // dynamically set the page height according to video length
         vid.addEventListener('loadedmetadata', function () {
+            console.log("duration: ", vid.duration);
+            console.log("setHeight.style.height: ", (Math.floor(vid.duration))*playbackConst, Math.floor(vid.duration)*playbackConst);
+            console.log("pageYOffset: ",window.pageYOffset);
             setHeight.style.height = Math.floor(vid.duration) * playbackConst + "px";
+            
         });
 
         // Use requestAnimationFrame for smooth playback
         function scrollPlay() {
             var renderLoop = function () {
                 requestAnimationFrame(function () {
-                    vid.currentTime = window.pageYOffset / playbackConst;
+                    const target = document.getElementById('set-height'); 
+                    console.log(vid.currentTime, window.pageYOffset, target.getBoundingClientRect().top*-1);
+                    vid.currentTime = (window.pageYOffset+target.getBoundingClientRect().top*-1) / playbackConst;
                     renderLoop();
                 });
             };
@@ -91,7 +72,4 @@
         window.requestAnimationFrame(scrollPlay);
                 //# sourceURL=pen.js
     </script>
-
-</body>
-</html>
 
