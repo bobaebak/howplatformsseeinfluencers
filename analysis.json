@@ -1,0 +1,201 @@
+{
+    "platform": [
+        "youtube", "tiktok", "bilibili", "twitch", "bigo", "afreecatv", "instagram", "xiaohongshu", "kakaostory"
+    ],
+    "logo_platform_info": {
+        "youtube": "Long-Video platform in USA",
+        "tiktok": "Short-Video platform in China",
+        "bilibili" : "Long-Video platform in China",
+        "twitch": "Live streaming platform in USA",
+        "bigo": "Live streaming platform in Singapore",
+        "afreecatv": "Live streaming platform in South Korea",
+        "instagram": "Posting platform in USA",
+        "xiaohongshu": "Posting platform in China",
+        "kakaostory": "Posting platform in South Korea"
+    },
+    "rendering_platform_info": {
+        "youtube": "YouTube is a global online video sharing and social media platform that has a variety of genres in How-to videos,  Ask Me Anything(AMA) videos, Product Reviews, Education, Challenging and Unboxing  in the USA. It is owned by Google, and has more than 2.5B MAU in 2022.",
+        "tiktok": "TikTok is a global short-form video hosting platform in China and hosts user-submitted videos such as short music, lip sync, dance, prank, and challenge videos. It has been owned by Bytedance from 2016, and has 1B MAU (Monthly Active Users) in Q4 2022. Even though this app is based in China, it’s not available for download in mainland China.",
+        "bilibili" : "BiliBili a cultural community video platform in China, and constitutes the main contents of life, entertainment, games, animation, science, technology. It has been owned by Bilibili Inc since 2009, and has 332.6M MAU (Monthly Active Users) in Q3 2022. It is mainly called the Chinese version of YouTube that Chinese generation Z prefers the most.",
+        "twitch": "Twitch is an video live-streaming service that focuses on video game live streaming, including broadcasts of esports competitions, music broadcasts, and creative content in the USA. It is owned by Amazon, and has 140M MAU (Monthly Active Users)  in Jan 2023.",
+        "bigo": "Bigo is a live-streaming platform in Singapore, and has popular gaming contents such as PUBG, League of Legends, RoV, Free Fire, Fortnite, Call of Duty, Dota 2, Hearthstone, Rules of Survival. It has been owned by BIGO Technology since 2014, and has 32.2M MAU (Monthly Active Users) in Q4 2021.",
+        "afreecatv": "AfreecaTV is a video streaming platform that is even expanding beyond TV broadcasts, live video game broadcasts, Esports to professional activity such as taxi driver monitoring and artist performances in South Korea. It has been owned by AfreecaTV Co., Ltd since 2011, and has 2.15M MAU (Monthly Active Users) in 2022.",
+        "instagram": "Instagram is a photo and video-sharing platform in the USA, major genres in Media, Fashion, Music, Fitness&Wellness, Photography, Food, and Travel. It is owned by META, and has 1B MAU (Monthly Active Users) in 2022.",
+        "xiaohongshu": "Xiaohongshu is a social media and e-commerce platform in China, and has a variety of beauty, fashion, food and travel genres. It was founded by Miranda Qu Fang&Charlwin Mao Wenchao from 2013, and has 158M MAU (Monthly Active Users) in June 2022. It refers as Chinese version of Instagram.",
+        "kakaostory": "KakaoStory is a social photo and video-sharing platform in South Korea, and is popular uploading selfies. It was launched by KAKAO from 2012, and has 9.17M MAU (Monthly Active Users) in 2020. KaKaoStory is still continued mainly for middle-aged and elderly people, but from the 2020s, middle-aged users also left for other SNSs. It’s strange that it’s not closed now."
+    },
+    "rendering_platform_genre": {
+        "afreecatv": {
+            "gameplay" : "composite of 19 influencers",
+            "lifestyle" : "composite of 54 influencers",
+            "mukbang" : "composite of 35 influencers" 
+        }, 
+        "bigo": {
+            "indonesia" : "composite of 44 influencers",
+            "usa" : "composite of 52 influencers",
+            "vietnam" : "composite of 48 influencers"
+        },
+        "bilibili": {
+            "beauty" : "composite of 49 influencers",
+            "food" : "composite of 48 influencers",
+            "lifestyle" : "composite of 49 influencers"
+        }, 
+        "instagram": {
+            "beauty" : "composite of 50 influencers",
+            "fashion" : "composite of 44 influencers",
+            "lifestyle" : "composite of 43 influencers"
+        }, 
+        "kakaostory": {
+            "beauty" : "composite of 50 influencers",
+            "fashion" : "composite of 44 influencers",
+            "lifestyle" : "composite of 42 influencers"
+        }, 
+        "tiktok": {
+            "beauty" : "composite of 47 influencers",
+            "fashion" : "composite of 41 influencers",
+            "lifestyle" : "composite of 47 influencers"
+        }, 
+        "twitch" : {
+            "gameplay" : "composite of 11 influencers",
+            "lifestyle" : "composite of 54 influencers",
+            "asmr" : "composite of 47 influencers"
+        }, 
+        "youtube" : {
+            "beauty" : "composite of 49 influencers",
+            "mukbang" : "composite of 41 influencers",
+            "fitness" : "composite of 46 influencers"
+        }, 
+        "xiaohongshu" : {
+            "beauty" : "composite of 47 influencers",
+            "food" : "composite of 41 influencers",
+            "fashion" : "composite of 49 influencers"
+        }
+    },
+    "resultData" : {
+        "afreecatv" : {
+            "gameplay": {
+                "gender": "Male : 26.32% <br/> Female : 73.68%",
+                "skintone" : [[176, 143, 135], [92, 63, 62], [99, 84, 79], [211, 204, 196]]
+            },
+            "lifestyle" : {
+                "gender": "Male : 29.63% <br/> Female : 70.37%",
+                "skintone" : [[185, 151, 149], [92, 62, 66], [99, 84, 85], [107, 84, 76]]
+            },
+            "mukbang": {
+                "gender": "Male : 57.14% <br/> Female : 42.86%",
+                "skintone" : [[176, 139, 134], [86, 55, 57], [97, 77, 77], [100, 76, 67]]
+            }
+        },
+        "bigo" : {
+            "indonesia" : {
+                "gender": "Male : 0% <br/> Female : 100%",
+                "skintone" : [[191, 153, 144], [88, 60, 59], [110, 84, 75], [96, 86, 90]] 
+            },
+            "usa" : {
+                "gender": "Male : 34.62% <br/> Female : 65.38%",
+                "skintone" : [[171, 124, 106], [72, 52, 49], [196, 186, 189], [105, 58, 54]] 
+            },
+            "vietnam" : {
+                "gender": "Male : 2.08% <br/> Female : 97.92%",
+                "skintone" : [[194, 156, 148], [108, 59, 60], [114, 84, 75], [105, 87, 90]]
+            }
+        },
+        "bilibili": {
+            "beauty" : {
+                "gender": "Male : 0% <br/> Female : 100%",
+                "skintone" : [[199, 159, 148], [106, 65, 63], [123, 92, 76], [105, 94, 97]] 
+            },
+            "food" : {
+                "gender": "Male : 37.50% <br/> Female : 62.50%",
+                "skintone" : [[186, 137, 124], [83, 44, 44], [97, 70, 65], [233, 196, 186]] 
+            },
+            "lifestyle" : {
+                "gender": "Male : 24.49% <br/> Female : 75.51%",
+                "skintone" : [[186, 141, 128], [88, 52, 52], [98, 76, 71], [236, 204, 188]] 
+            }}, 
+        "instagram": {
+            "beauty" : {
+                "gender": "Male : 2% <br/> Female : 98%",
+                "skintone" : [[190, 140, 123], [87, 55, 53], [98, 77, 70], [243, 204, 187]] 
+            },
+            "fashion" : {
+                "gender": "Male : 9.09% <br/> Female : 90.91%",
+                "skintone" : [[185, 137, 122], [85, 54, 54], [98, 77, 71], [237, 204, 188]] 
+            },
+            "lifestyle" : {
+                "gender": "Male : 13.95% <br/> Female : 86.05%",
+                "skintone" : [[183, 136, 123], [93, 55, 54], [98, 77, 72], [236, 204, 188]] 
+            }
+        }, 
+        "kakaostory": {
+            "beauty" : {
+                "gender": "Male : 6% <br/> Female : 94%",
+                "skintone" : [[191, 151, 140], [97, 59, 59], [106, 85, 80], [232, 204, 194]] 
+            },
+            "fashion" : {
+                "gender": "Male : 2.27% <br/> Female : 97.73%",
+                "skintone" : [[182, 139, 124], [92, 51, 48], [98, 77, 68], [236, 204, 188]] 
+            },
+            "lifestyle" : {
+                "gender": "Male : 11.90% <br/> Female : 88.10%",
+                "skintone" : [[187, 146, 135], [106, 59, 60], [125, 84, 68], [96, 86, 89]] 
+            }
+        }, 
+        "tiktok": {
+            "beauty" : {
+                "gender": "Male :4.26% <br/> Female : 95.74%",
+                "skintone" : [[193, 141, 126], [87, 56, 56], [98, 76, 71], [245, 204, 188]] 
+            },
+            "fashion" : {
+                "gender": "Male : 4.88% <br/> Female : 95.12%",
+                "skintone" : [[176, 127, 113], [82, 55, 52], [121, 56, 62], [198, 186, 189]] 
+            },
+            "lifestyle" : {
+                "gender": "Male : 4.44% <br/> Female : 95.56%",
+                "skintone" : [[184, 130, 116], [79, 53, 51], [124, 56, 62], [200, 187, 189]] 
+            }
+        }, 
+        "twitch" : {
+            "gameplay" : {
+                "gender": "Male : 90.91% <br/> Female : 9.09%",
+                "skintone" : [[146, 112, 108], [209, 165, 159], [65, 47, 49], [188, 179, 188]]
+            },
+            "lifestyle" : {
+                "gender": "Male : 16.67% <br/> Female : 83.33%",
+                "skintone" : [[173, 131, 127], [72, 51, 53], [118, 63, 68], [198, 187, 196]] 
+            },
+            "asmr" : {
+                "gender": "Male : 0% <br/> Female : 100%",
+                "skintone" : [[177, 128, 126], [76, 51, 55], [115, 63, 70], [201, 187, 196]] 
+            }
+        }, 
+        "youtube" : {
+            "beauty" : {
+                "gender": "Male : 2.04% <br/> Female: 97.96%",
+                "skintone" : [[199, 146, 127], [95, 62, 60], [103, 86, 81], [245, 204, 186]] 
+            },
+            "mukbang" : {
+                "gender": "Male : 46.34% <br/> Female : 53.66%",
+                "skintone" : [[190, 139, 124], [88, 53, 53], [103, 78, 73], [249, 204, 187]] 
+            },
+            "fitness" : {
+                "gender": "Male : 21.74% <br/> Female : 78.26%",
+                "skintone" : [[193, 142, 126], [85, 55, 52], [104, 78, 71], [220, 204, 188]] 
+            }
+        }, 
+        "xiaohongshu" : {
+            "beauty" : {
+                "gender": "Male : 0% <br/> Female : 100%",
+                "skintone" : [[195, 164, 153], [88, 62, 60], [106, 92, 87], [114, 92, 75]] 
+            },
+            "food" : {
+                "gender": "Male : 0% <br/> Female : 100%",
+                "skintone" : [[185, 143, 126], [93, 61, 56], [99, 84, 78], [224, 204, 188]] 
+            },
+            "fashion" : {
+                "gender": "Male : 0% <br/> Female : 100%",
+                "skintone" : [[186, 153, 140], [89, 57, 53], [134, 75, 76], [99, 84, 79]] 
+            }
+        }
+    }
+}
