@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>How Platforms See Influencers</title>
+<!-- 
+Highway Template
+https://templatemo.com/tm-520-highway
+-->
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/light-box.css">
+        <link rel="stylesheet" href="css/templatemo-style.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+        <style>
+            body, #video-container, #portfolio {
+                background-color:black;
+            }
+            
+            .col-md-4 {
+                box-shadow: 1px 2px 4px 2px rgba(255,255,255,0.25);
+            }
+
+            .black-container {
+                background-color:black;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                z-index: 1;
+            }
+            .black-container .video-content {
+                z-index: 99999;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            }
+            .black-container .video-content .inner {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-flow: column wrap;
+            }
+
+            .black-container .video-content .inner h1{
+                font-size: 64px;
+                color: #fff;
+                letter-spacing: 2px;
+                font-weight: 500;
+                text-align: center;
+            }
+            .black-container .video-content .inner p, #psummary {
+                color: #fff;
+                font-size: 22px;
+                font-weight: 200;
+                letter-spacing: 1.5px;
+                text-align: center;
+                padding: 0px 30px;
+            }
+            
+ 
+            /* 3d rendering view */
+            .render_view {
+                width: 33%;
+                height: 100%;
+                float: left;
+                margin-right: 1%;
+                margin-left: 1%;
+            }
+        </style>
+
+        <style id="platforms-logo">
+            .logos {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 100px;
+            }
+            #apple,#twitter,#github,#facebook,#instagram,#twitch,#youtube,#whatsapp,#pinterest {
+            font-size: 8em;
+            background-color: white;
+            color: #fff;
+            box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080,
+                2px 2px 10px #00000080, 2px 2px 3px #00000080, inset 2px 2px 10px #00000080,
+                inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080,
+                inset 2px 2px 10px #00000080;
+            border-radius: 29px;
+            padding: 11px 19px;
+            margin: 0 40px;
+            animation: animate 3s linear infinite;
+            text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
+                0 0 200px #0072ff;
+            }
+            #twitter {
+            animation-delay: 0.3s;
+            }
+            #facebook {
+            animation-delay: 0.7s;
+            }
+            #github {
+            animation-delay: 0.1s;
+            }
+            #instagram {
+            animation-delay: 0.3s;
+            }
+            #twitch {
+            animation-delay: 0.5s;
+            }
+            #youtube {
+            animation-delay: 0.1s;
+            }
+            #whatsapp {
+            animation-delay: 0.3s;
+            }
+            #pinterest {
+            animation-delay: 0.7s;
+            }
+            
+            @keyframes animate {
+                from {
+                    filter: hue-rotate(0deg);
+                }
+                to {
+                    filter: hue-rotate(360deg);
+                }
+            }
+        </style>
+
+        <!-- mouse scroll effect on the 2d video css -->
+        <style id="mouse-scroll">
+        .scroll-downs {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            width :34px;
+            height: 55px;
+        }
+        .mousey {
+            width: 3px;
+            padding: 10px 15px;
+            height: 35px;
+            border: 2px solid #fff;
+            border-radius: 25px;
+            opacity: 0.75;
+            box-sizing: content-box;
+        }
+        .scroller {
+            width: 3px;
+            height: 10px;
+            border-radius: 25%;
+            background-color: #fff;
+            animation-name: scroll;
+            animation-duration: 2.2s;
+            animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+            animation-iteration-count: infinite;
+        }
+        @keyframes scroll {
+            0% { opacity: 0; }
+            
+        }
+        </style>
+        
+        <style id="arrow">
+            /* Markup */
+            .arrow-container {
+                text-align: center;
+            }
+            /* Arrow & Hover Animation */
+            .more-arrows {
+                width: 75px;
+                height: 65px;
+            }
+            .more-arrows:hover polygon {
+                fill: #fff;
+                transition: all 0.2s ease-out;
+            }
+            .more-arrows:hover polygon.arrow-bottom {
+                transform: translateY(-18px);
+            }
+            .more-arrows:hover polygon.arrow-top {
+                transform: translateY(18px);
+            }
+            polygon {
+                fill: #fff;
+                transition: all 0.2s ease-out;
+            }
+            polygon.arrow-middle {
+                opacity: 0.75;
+            }
+            polygon.arrow-top {
+                opacity: 0.5;
+            }
+        </style>
+
+        <style id="user-guide-text">
+            .heroic-text {
+                background: linear-gradient(45deg, #ffdc73, #fa7d1e, #d72878, #962dbe, #505ad7);
+                background-size: 150%;
+                animation: gradient 2.5s ease infinite;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+              }
+              
+              [heroic]:before {
+                position: absolute;
+                background: linear-gradient(45deg, #ffdc73, #fa7d1e, #d72878, #962dbe, #505ad7);
+                background-size: 150%;
+                animation: gradient 2.5s ease infinite;
+                content: attr(heroic);
+                filter: blur(25px);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+              }
+              
+              /*Created by trivia.studio*/
+              
+              .user-guide-text {
+                color: #ffffff;
+                font-family: 'Inter', sans-serif;
+                font-size: 64px;
+                font-weight: 600;
+                line-height: 64px;
+                text-align: center;
+                text-decoration: none;
+              }
+              
+              @keyframes gradient {
+                0%,
+                to {
+                  background-position: 0 50%
+                }
+                50% {
+                  background-position: 100% 50%
+                }
+              }
+        </style>
+         
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+
+<body>
+
+    <div id="video2-container" class="black-container">
+        <video muted preload autoplay="" id="video2" style="width:100%;">
+        	<source src="video/3dvideo.mp4" type="video/mp4" /> 
+        </video>
+    </div>
+
+    <div id="video-container">
+        <div class="video-content">
+            <div class="inner">
+                <h1>How Platforms See Influencers</h1>
+                <p>Influencer Ethnography Research Lab (IERLab)</p>
+                <p>Hub for Immersive Visualisation and eResearch (HIVE)</p>
+                <p>Curtin University</p>
+                <!-- <div class="scroll-icon">
+                    <a class="scrollToNext" data-scrollTo="background-container" href="#"><img src="img/scroll-icon.png" alt=""></a>
+                </div> -->
+                <div class="arrow-container">
+                    <p>Click</p>
+                    <svg class="more-arrows scrollToNext" data-scrollTo="background-container" >
+                        <polygon class="arrow-top" points="37.6,27.9 1.8,1.3 3.3,0 37.6,25.3 71.9,0 73.7,1.3 "/>
+                        <polygon class="arrow-middle" points="37.6,45.8 0.8,18.7 4.4,16.4 37.6,41.2 71.2,16.4 74.5,18.7 "/>
+                        <polygon class="arrow-bottom" points="37.6,64 0,36.1 5.1,32.8 37.6,56.8 70.4,32.8 75.5,36.1 "/>
+                    </svg>
+                </div>
+
+                <div class="logos">
+                    <i class="fa fa-twitter" id="twitter"></i>
+                    <i class="fa fa-facebook-square" id="facebook"></i>
+                    <i class="fa fa-instagram" id="instagram"></i>
+                    <i class="fa fa-youtube" id="youtube"></i>
+                    <i class="fa fa-whatsapp" id="whatsapp"></i>
+                    <i class="fa fa-pinterest" id="pinterest"></i>
+                    <i class="fa fa-twitch" id="twitch"></i>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    <div id="background-container" class="black-container">
+        <div class="video-content">
+            <div class="inner">
+                <h1>WHAT IS AN INFLUENCER?</h1>
+                <iframe src="influencerSwing.html" style="width:100%; height:140px; border:none;"></iframe>
+
+                <p>An influencer is a person or group that has the ability to influence the behaviour or opinions of others on digital platforms</p>
+                <p>We can study influencers by their:</p>
+                <p>Format: Photo Blogger, Video Streamers</p>  
+                <p>Platform: Instagrammer, TikTokers, YouTuber</p>
+                <p>Concept: Internet Celebrities, Micro-Celebrities, Creator, Influencers</p>
+                <br/>
+                <p>There are over 51 million YouTube channels in the world in 2022</p>
+                <p>29,000 YouTube channels have over 1 million subscribers</p>
+                <p>Around 3.7M new videos are uploaded to YouTube everyday</p>
+                <p>Youtube videos can earn their creators between $3~$5 revenue per 1,000 views</p>
+                <br/>
+                <p>What comes to mind when you think about influencers?</p>
+
+                <div class="arrow-container">
+                    <p>Click</p>
+                    <svg class="more-arrows scrollToNext" data-scrollTo="video1-container" >
+                        <polygon class="arrow-top" points="37.6,27.9 1.8,1.3 3.3,0 37.6,25.3 71.9,0 73.7,1.3 "/>
+                        <polygon class="arrow-middle" points="37.6,45.8 0.8,18.7 4.4,16.4 37.6,41.2 71.2,16.4 74.5,18.7 "/>
+                        <polygon class="arrow-bottom" points="37.6,64 0,36.1 5.1,32.8 37.6,56.8 70.4,32.8 75.5,36.1 "/>
+                    </svg>
+                </div>
+                <!-- <div class="scroll-icon">
+                    <a class="scrollToNext" data-scrollTo="video1-container" href="#"><img src="img/scroll-icon.png" alt=""></a>
+                </div>     -->
+            </div>
+        </div>
+    </div>
+
+    <div id="video1-container" class="black-container">
+        <video muted preload id="video1" style="width:100%; height:85%;">
+        	<source src="video/2dmorpher.mp4" type="video/mp4" /> 
+        </video>
+        <div class="arrow-container" style="height:15%;">
+            <p>Click</p>
+            <svg class="more-arrows scrollToNext" data-scrollTo="background2-container" >
+                <polygon class="arrow-top" points="37.6,27.9 1.8,1.3 3.3,0 37.6,25.3 71.9,0 73.7,1.3 "/>
+                <polygon class="arrow-middle" points="37.6,45.8 0.8,18.7 4.4,16.4 37.6,41.2 71.2,16.4 74.5,18.7 "/>
+                <polygon class="arrow-bottom" points="37.6,64 0,36.1 5.1,32.8 37.6,56.8 70.4,32.8 75.5,36.1 "/>
+            </svg>
+        </div>
+    </div>
+
+    <div id="background2-container" class="black-container">
+        <div class="video-content">
+            <div class="inner">
+                <h1>DO YOU RECOGNIZE ANY OF THESE PEOPLE?</h1><br/>
+
+                <p>These 27 faces are virtual humans</p> 
+                <p>We created them as composite faces through a combination of qualitative ethnographic and quantitative computational methods</p>
+                <p>They represent the 'average' looking Influencer on the most popular genres on nine platforms</p>
+                <br/>
+                <p>Everyone's impression of influencers and internet pop culture is created through personal taste and media consumption</p>
+                <p>However, platforms play an important role in shaping these impressions through their inherent algorithmic sorting and recommendation systems</p>
+                <br/>
+                <p>Do these virtual influencers match your expectation of what influencers look like?</p>
+                <!-- <div class="scroll-icon">
+                    <a class="scrollToNext" data-scrollTo="methods-container" href="#"><img src="img/scroll-icon.png" alt=""></a>
+                </div>     -->
+                <div class="arrow-container">
+                    <p>Click</p>
+                    <svg class="more-arrows scrollToNext" data-scrollTo="methods-container" >
+                        <polygon class="arrow-top" points="37.6,27.9 1.8,1.3 3.3,0 37.6,25.3 71.9,0 73.7,1.3 "/>
+                        <polygon class="arrow-middle" points="37.6,45.8 0.8,18.7 4.4,16.4 37.6,41.2 71.2,16.4 74.5,18.7 "/>
+                        <polygon class="arrow-bottom" points="37.6,64 0,36.1 5.1,32.8 37.6,56.8 70.4,32.8 75.5,36.1 "/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="methods-container" class="black-container">
+        <div class="video-content">
+            <div class="inner">
+                <h1>OUR PROJECT</h1><br/>
+                
+                <p>We studied 9 popular short video, long video, and livestream video platforms from Silicon Valley and the East Asian region: AfreecaTV, Bigo, Bilibili, Instagram, Kakao, TikTok, Twitch, Xiaohongshu and YouTube</p>
+                <p>Focusing on the top 3 genres of each platform, we conduct image capture, cropping, averaging, texture smoothening, and modeling to create 3D virtual influencers that represent the most popular 'face' on the platform</p>
+                <p>In this pilot study, we focus on skin tone and gender composites</p>
+                <br/>
+                <p>Check out our 27 virtual influencers from nine platforms</p>
+                <!-- <div class="scroll-icon">
+                    <a class="scrollToNext" data-scrollTo="portfolio" href="#"><img src="img/scroll-icon.png" alt=""></a>
+                </div>     -->
+                <div class="arrow-container">
+                    <p>Click</p>
+                    <svg class="more-arrows scrollToNext" data-scrollTo="portfolio" >
+                        <polygon class="arrow-top" points="37.6,27.9 1.8,1.3 3.3,0 37.6,25.3 71.9,0 73.7,1.3 "/>
+                        <polygon class="arrow-middle" points="37.6,45.8 0.8,18.7 4.4,16.4 37.6,41.2 71.2,16.4 74.5,18.7 "/>
+                        <polygon class="arrow-bottom" points="37.6,64 0,36.1 5.1,32.8 37.6,56.8 70.4,32.8 75.5,36.1 "/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="black-container grid-portfolio" id="portfolio" >
+        <div class="container" style="width:100%;position:absolute;top:5%;">
+            <div class="render_view">
+                <iframe id="viewer1" src="" scrolling="no" frameborder="0" width="100%" height="1400px" style="visibility: hidden;"></iframe>
+            </div>
+            <div class="row" style="width:30%; height:100%; float:left; margin-left:0px;">
+                <div class="col-md-12" style="padding:25px 0px; text-align:center;">
+                    <a class="user-guide-text" href="#">
+                        <span heroic="Click posters, Check 3D models" class="heroic-text">Click posters, Check 3D models</span><br>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="portfolio-item" onclick="rendering('youtube')">
+                        <div class="thumb">
+                            <div class="hover-effect">
+                                <div class="hover-content">
+                                    <h1>Youtube</h1>
+                                    <p id="youtube_logo"></p>
+                                </div>
+                            </div>
+                            <div class="image">
+                                <img src="img/logo/youtube_logo.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="portfolio-item" onclick="rendering('tiktok')">
+                        <div class="thumb">
+                            <div class="hover-effect">
+                                <div class="hover-content">
+                                    <h1>TikTok</h1>
+                                    <p id="tiktok_logo"></p>
+                                </div>
+                            </div>
+                            <div class="image">
+                                <img src="img/logo/tiktok_logo.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="portfolio-item" onclick="rendering('bilibili')">
+                        <div class="thumb">
+                            <div class="hover-effect">
+                                <div class="hover-content">
+                                    <h1>BiliBili</h1>
+                                    <p id="bilibili_logo"></p>
+                                </div>
+                            </div>
+                            <div class="image">
+                                <img src="img/logo/bilibili_logo.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="portfolio-item" onclick="rendering('twitch')">
+                        <div class="thumb">
+                            <div class="hover-effect">
+                                <div class="hover-content">
+                                    <h1>Twitch</h1>
+                                    <p id="twitch_logo"></p>
+                                </div>
+                            </div>
+                            <div class="image">
+                                <img src="img/logo/twitch_logo.webp">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="portfolio-item" onclick="rendering('bigo')">
+                        <div class="thumb">
+                            <div class="hover-effect">
+                                <div class="hover-content">
+                                    <h1>Bigo</h1>
+                                    <p id="bigo_logo"></p>
+                                </div>
+                            </div>
+                            <div class="image">
+                                <img src="img/logo/bigo_logo.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="portfolio-item" onclick="rendering('afreecatv')">
+                        <div class="thumb">
+                            <div class="hover-effect">
+                                <div class="hover-content">
+                                    <h1>AfreecaTV</h1>
+                                    <p id="afreecatv_logo"></p>
+                                </div>
+                            </div>
+                            <div class="image">
+                                <img src="img/logo/afreecatv_logo.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="portfolio-item" onclick="rendering('instagram')">
+                        <div class="thumb">
+                            <div class="hover-effect">
+                                <div class="hover-content">
+                                    <h1>Instagram</h1>
+                                    <p id="instagram_logo"></p>
+                                </div>
+                            </div>
+                            <div class="image">
+                                <img src="img/logo/instagram_logo.webp">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="portfolio-item" onclick="rendering('xiaohongshu')">
+                        <div class="thumb">
+                            <div class="hover-effect">
+                                <div class="hover-content">
+                                    <h1>Xiaohongshu</h1>
+                                    <p id="xiaohongshu_logo"></p>
+                                </div>
+                            </div>
+                            <div class="image">
+                                <img src="img/logo/xiaohongshu_logo.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="portfolio-item" onclick="rendering('kakaostory')">
+                        <div class="thumb">
+                            <div class="hover-effect">
+                                <div class="hover-content">
+                                    <h1>kakaostory</h1>
+                                    <p id="kakaostory_logo"></p>
+                                </div>
+                            </div>
+                            <div class="image">
+                                <img src="img/logo/kakaostory_logo.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 arrow-container" style="padding:100px;">
+                    <p id="psummary">summary</p>
+                    <svg class="more-arrows scrollToNext" data-scrollTo="conclusion-container" >
+                        <polygon class="arrow-top" points="37.6,27.9 1.8,1.3 3.3,0 37.6,25.3 71.9,0 73.7,1.3 "/>
+                        <polygon class="arrow-middle" points="37.6,45.8 0.8,18.7 4.4,16.4 37.6,41.2 71.2,16.4 74.5,18.7 "/>
+                        <polygon class="arrow-bottom" points="37.6,64 0,36.1 5.1,32.8 37.6,56.8 70.4,32.8 75.5,36.1 "/>
+                    </svg>
+                </div>
+            </div>
+            <div class="render_view">
+                <iframe id="viewer2" src="" frameborder="0" width="100%" height="1400px" style="visibility: hidden;"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="conclusion-container" class="black-container">
+        <div class="video-content">
+            <div class="inner">
+                <h1>SUMMARY</h1><br/>
+                
+                <p>In our project, we found that biased platform' algorithm promoting influencers to viewers</p>
+                <p>This has impacts on platforms, influencers, and everyday viewers, 
+                    because platform ranking and sorting mechanism lead to blurring out the diverse influencers in the world, 
+                    influencers make stereotypes of popular social trends, and everyday viewers perceive all
+                </p> 
+                <br/>
+
+                <p>We make the following recommendations:</p>
+                <p>Platforms should reveal transparency with high accountability</p>
+                <p>Influencers should keep their individuality and encourage minority culture</p>
+                <p>Everyday viewers should aware of its perception and representation</p>    
+                <div class="scroll-icon">
+                    <a class="scrollToNext" data-scrollTo="video2-container" href="#"><img src="img/scroll-up-icon.png" alt=""></a>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container-fluid">
+            <div class="col-md-12">
+                <p style="text-transform:none;">Copyright &copy; Bobae Bak, 2022 HIVE Summer Intern | Professor Crystal Abidin, IERLab | Carley Tilett, HIVE | For queries, contact: crystal.abidin@curtin.edu.au</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Modal button -->
+    <!-- <div class="popup-icon">
+      <button id="modBtn" class="modal-btn"><img src="img/contact-icon.png" alt=""></button>
+    </div>   -->
+
+    <!-- Modal -->
+    <div id="modal" class="modal" style="display: block;">
+        <!-- Modal Content -->
+        <div class="modal-content modal-animated-in">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h3 class="header-title">Say hello to <em>Highway</em></h3>
+            <div class="close-btn"><img src="img/close_contact.png" alt=""></div>    
+          </div>
+          <!-- Modal Body -->
+          <div class="modal-body">
+            <div class="col-md-6 col-md-offset-3">
+              <form id="contact" action="" method="post">
+                  <div class="row">
+                      <div class="col-md-12">
+                        <fieldset>
+                          <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">
+                        </fieldset>
+                      </div>
+                      <div class="col-md-12">
+                        <fieldset>
+                          <input name="email" type="email" class="form-control" id="email" placeholder="Your email..." required="">
+                        </fieldset>
+                      </div>
+                      <div class="col-md-12">
+                        <fieldset>
+                          <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
+                        </fieldset>
+                      </div>
+                      <div class="col-md-12">
+                        <fieldset>
+                          <button type="submit" id="form-submit" class="btn">Send Message Now</button>
+                        </fieldset>
+                      </div>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <script>
+        var vid1Played = 0;
+        var vid2Played = 0;
+
+        document.getElementById( "modal" ).style.display="none"; 
+
+        // set the description below the logo from the json file
+        function setPoster() {
+            fetch("analysis.json")
+            .then((response) => response.json())
+            .then((data) => {
+                let platforms = Object.keys(data.logo_platform_info);
+                platforms.forEach(platform => {
+                    let logoComp = document.getElementById(platform+"_logo");
+                    logoComp.innerHTML = data.logo_platform_info[platform];
+                });
+            });
+        }
+        setPoster();
+
+        // 3d video setting
+        var vid2 = document.getElementById("video2");
+        vid2.addEventListener('ended', (event) => {
+            if (vid2Played == 0) {
+                vid2Played = 1;
+                document.getElementById( "video-container" ).scrollIntoView();
+                vid2.play();
+            } else {
+                vid2.play();
+            }
+        });
+
+        var vid1 = document.getElementById("video1");
+        vid1.addEventListener('ended', (event) => {
+            if (vid1Played == 0) {
+                vid1Played = 1;
+                document.getElementById( "background2-container" ).scrollIntoView();
+                vid1.play();
+            } else {
+                vid1.play();
+            }
+        });
+
+
+        // set the div section top
+        var tops = [];
+        function calcDivSection() {
+            var divs = ['video2-container', 'video-container', 'background-container', 'video1-container', 'background2-container', 'methods-container', 'portfolio', 'conclusion-container'];
+            divs.forEach(function(div) {
+                const top = document.querySelector("#"+div).offsetTop;
+                tops.push(top);
+            });
+            console.log(tops);
+        }
+        //calcDivSection();
+
+        // rendering page left, right side
+        var isClick = false;
+        function rendering(platform) {
+            if (isClick) {
+                // open the window right side
+                var url = "modelviewer.html?" + platform;
+                isClick=false;
+
+                var target = document.getElementById("viewer2");
+                if (window.getComputedStyle(target).visibility == "hidden") {
+                    target.style.visibility = "visible";
+                }
+                target.src = url;
+                //target.style.height = target.contentWindow.document.body.scrollHeight + 'px';
+            } else {
+                // open the window left side
+                var url = "modelviewer.html?" + platform;
+                isClick=true;
+                
+                var target = document.getElementById("viewer1");
+                if (window.getComputedStyle(target).visibility == "hidden") {
+                    target.style.visibility = "visible";
+                }
+                target.src = url;
+                //target.style.height = target.contentWindow.document.body.scrollHeight + 'px';
+            }
+        }
+
+        
+        // add scroll event 
+        var oldScrollY = 0;
+        document.body.addEventListener("scroll", (event) => {
+            currScrollY = document.body.scrollTop;
+            
+            if (currScrollY > oldScrollY) { // scroll down
+                /*
+                initScrollY = 0;
+                targetScrollY = top;
+                tops.forEach(function(top) {
+                    if (currScrollY >= initScrollY && currScrollY < top) {
+                        targetScrollY = top;
+                    }
+                });
+                //document.getElementById( 'portfolio' ).scrollIntoView();
+              */  
+            } else if(currScrollY < oldScrollY) {   // scroll up
+                //document.getElementById( 'video-container' ).scrollIntoView();
+            }
+
+            oldScrollY = currScrollY;
+        }, false);
+        
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+    
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+
+        // Intro to Background section move
+        $('.scrollToNext').on('click', function(){
+            var scrollTo = $(this).attr('data-scrollTo');
+
+            // animate and scroll to the sectin 
+            $('body, html').animate({ "scrollTop": document.querySelector("#"+scrollTo).offsetTop }, 2000 );
+            
+            if(scrollTo == "video1-container") {
+                document.getElementById("video1").playbackRate = 2;
+                document.getElementById("video1").play();
+            }
+            return false;
+        });
+
+    </script>
+
+</body>
+</html>
