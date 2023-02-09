@@ -17,6 +17,11 @@ https://templatemo.com/tm-520-highway
         <link rel="stylesheet" href="css/fontAwesome.css">
         <link rel="stylesheet" href="css/light-box.css">
         <link rel="stylesheet" href="css/templatemo-style.css">
+        
+        <!-- new css -->
+        <link rel="stylesheet" href="css/mousewheel.css">
+        <link rel="stylesheet" href="css/platform-logo.css">
+         
 
         <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900" rel="stylesheet">
         <style>
@@ -75,64 +80,6 @@ https://templatemo.com/tm-520-highway
                 float: left;
                 margin-right: 1%;
                 margin-left: 1%;
-            }
-        </style>
-
-        <style id="platforms-logo">
-            .logos {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-top: 100px;
-            }
-
-            #apple,#twitter,#github,#facebook,#instagram,#twitch,#youtube,#whatsapp,#pinterest {
-                font-size: 8em;
-                background-color: white;
-                color: #fff;
-                box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080,
-                    2px 2px 10px #00000080, 2px 2px 3px #00000080, inset 2px 2px 10px #00000080,
-                    inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080,
-                    inset 2px 2px 10px #00000080;
-                border-radius: 29px;
-                padding: 11px 19px;
-                margin: 0 40px;
-                animation: animate 3s linear infinite;
-                text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
-                    0 0 200px #0072ff;
-            }
-            #twitter {
-            animation-delay: 0.3s;
-            }
-            #facebook {
-            animation-delay: 0.7s;
-            }
-            #github {
-            animation-delay: 0.1s;
-            }
-            #instagram {
-            animation-delay: 0.3s;
-            }
-            #twitch {
-            animation-delay: 0.5s;
-            }
-            #youtube {
-            animation-delay: 0.1s;
-            }
-            #whatsapp {
-            animation-delay: 0.3s;
-            }
-            #pinterest {
-            animation-delay: 0.7s;
-            }
-              
-            @keyframes animate {
-                from {
-                  filter: hue-rotate(0deg);
-                }
-                to {
-                  filter: hue-rotate(360deg);
-                }
             }
         </style>
 
@@ -245,8 +192,6 @@ https://templatemo.com/tm-520-highway
                 }
               }
         </style>
-         
-
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
 
@@ -329,11 +274,46 @@ https://templatemo.com/tm-520-highway
     <div id="video1-container" class="black-container">
         <!-- <iframe id="vidview" src="2dvideoviewer.html" width="100%" height="100%" style="border:none;" ></iframe> -->
         <iframe id="vidview" src="videoviewer.html" width="100%" height="100%" style="border:none;" ></iframe>
-        <div class="scroll-downs">
+        
+        <!-- <div class="scroll-downs">
             <div class="mousey">
                 <div class="scroller"></div>
             </div>
-        </div>
+        </div> -->
+
+        <div class="mouse-wrap">
+            <div class="mouse">
+                <div class="frame">
+                    <svg version="1.1" id="mouse" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 54.9 91" style="enable-background:new 0 0 54.9 91;" xml:space="preserve">
+                    <path id="XMLID_173_" class="st0"
+                    linejoin="round" stroke-linecap="round" stroke-miterlimit="10" d="M27.4,3.6L27.4,3.6C14.2,3.6,3.5,14.3,3.5,27.5v36c0,13.2,10.7,23.9,23.9,23.9h0
+                c13.2,0,23.9-10.7,23.9-23.9v-36C51.4,14.3,40.7,3.6,27.4,3.6z"/>
+                    </svg>
+          
+                </div>
+             
+                <div class="mouse-left">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+               viewBox="0 0 27.4 91" style="enable-background:new 0 0 27.4 91;" xml:space="preserve">
+                    <path 
+                linejoin="round" stroke-linecap="round" stroke-miterlimit="10"
+                class="Draw-Frame Animate-Draw" d="M27.4,87.5L27.4,87.5c-13.2,0-23.9-10.7-23.9-23.9v-36c0-13.2,10.7-23.9,23.9-23.9h0"/>
+                    </svg>
+                </div>
+              
+                <div class="mouse-right">
+                    <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+               viewBox="0 0 27.4 91" style="enable-background:new 0 0 27.4 91;" xml:space="preserve">
+                    <path 
+                linejoin="round" stroke-linecap="round" stroke-miterlimit="10"
+                class="Draw-Frame Animate-Draw" d="M0,3.6L0,3.6c13.2,0,23.9,10.7,23.9,23.9v36c0,13.2-10.7,23.9-23.9,23.9h0"/>
+                    </svg>
+                </div>
+            </div>
+            <p id="pscroll">Scroll</p>
+          </div>
+
     </div>
 
     <div id="background2-container" class="black-container">
